@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Bienvenid@s! - Programa de Guitarra y Canto</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f7f4ee;
+            color: #2c2520;
+            line-height: 1.6;
+            padding: 16px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 24px 0 16px 0;
+            border-bottom: 2px dashed #d1c7bd;
+            margin-bottom: 24px;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            color: #b25329;
+            font-weight: 800;
+            margin-bottom: 4px;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: #5c534c;
+            font-style: italic;
+            font-weight: 500;
+        }
+
+        .intro-box {
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 18px;
+            box-shadow: 0 2px 8px rgba(44, 37, 32, 0.05);
+            margin-bottom: 24px;
+            border-left: 5px solid #b25329;
+        }
+
+        .intro-box p {
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+            color: #4a3f35;
+        }
+
+        .premisas {
+            list-style: none;
+        }
+
+        .premisa-item {
+            margin-bottom: 12px;
+            padding-left: 28px;
+            position: relative;
+            font-size: 0.95rem;
+        }
+
+        .premisa-item::before {
+            content: "✓";
+            position: absolute;
+            left: 4px;
+            top: 0;
+            color: #b25329;
+            font-weight: bold;
+        }
+
+        .premisa-title {
+            font-weight: 700;
+            color: #2c2520;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            color: #4a3f35;
+            margin: 28px 0 16px 0;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #d1c7bd;
+            padding-bottom: 6px;
+        }
+
+        .section-header {
+            background-color: #eaddcf;
+            color: #4a3f35;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin: 20px 0 10px 0;
+            text-align: center;
+        }
+
+        .song-item {
+            background-color: #ffffff;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            box-shadow: 0 1px 4px rgba(44, 37, 32, 0.04);
+            padding: 14px 16px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #3d322a;
+            border: 1px solid #ebdcd0;
+        }
+
+        details.song-item {
+            padding: 0;
+            overflow: hidden;
+            border: 1px solid #ebdcd0;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        details.song-item summary {
+            list-style: none;
+            padding: 14px 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            outline: none;
+            user-select: none;
+        }
+
+        details.song-item summary::-webkit-details-marker {
+            display: none;
+        }
+
+        details.song-item summary::after {
+            content: "+";
+            font-size: 1.4rem;
+            color: #b25329;
+            font-weight: bold;
+            transition: transform 0.2s ease;
+        }
+
+        details[open].song-item summary::after {
+            content: "−";
+        }
+
+        details[open].song-item summary {
+            border-bottom: 1px solid #f2e6dc;
+            background-color: #fffbf7;
+        }
+
+        .lyrics {
+            padding: 16px;
+            background-color: #faf8f5;
+            font-family: "Georgia", Cambria, serif;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: #2c2520;
+            white-space: pre-line;
+            cursor: default;
+        }
+
+        .lyrics .coro {
+            font-style: italic;
+            font-weight: 600;
+            color: #8c3b16;
+            margin: 10px 0;
+            padding-left: 10px;
+            border-left: 2px solid #e2b39c;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px 0;
+            font-size: 0.85rem;
+            color: #8c8177;
+            border-top: 1px dashed #d1c7bd;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>¡Bienvenid@s!</h1>
+        <div class="subtitle">Guitarra y Canto · 100% Unplugged</div>
+    </header>
+
+    <div class="intro-box">
+        <p>Como reconocimiento, valoración y admiración a nuestr@s ancestr@s y aprovechando la cercanía que permite este querido espacio, la presentación es: <strong>100% "unplugged"</strong>.</p>
+        <p>Por ello les pedimos su apoyo en estas simples premisas:</p>
+        <ul class="premisas">
+            <li class="premisa-item"><span class="premisa-title">Premisa 1 (para la escucha!):</span> en la interpretación de cada pieza, disponer del máximo silencio posible.</li>
+            <li class="premisa-item"><span class="premisa-title">Premisa 2 (para participar!):</span> en la interpretación de cada pieza, si es por ejemplo canto y se la sabe o la va aprendiendo, no dude en sumarse: en cualquier caso, ¡la premisa 2 debe ayudar a la premisa 1!</li>
+            <li class="premisa-item"><span class="premisa-title">Premisa 3 (sobre las premisas!):</span> no existe la premisa 3!... pero ¡ayuda a la premisa 2!</li>
+        </ul>
+    </div>
+
+    <h2>Programa de viaje</h2>
+
+    <div class="section-header">(Carlos Martin Ortiz)</div>
+
+    <div class="song-item">La Humilde <span style="font-weight:normal; font-size:0.9rem; color:#6b5d52;">(Cachilo Díaz)</span></div>
+    
+    <div class="song-item">Chanita <span style="font-weight:normal; font-size:0.9rem; color:#6b5d52;">(Carlos Martin)</span></div>
+    
+    <div class="song-item">P'a Don Lucho <span style="font-weight:normal; font-size:0.9rem; color:#6b5d52;">(Carlos Martin)</span></div>
+
+    <!-- LINK 2 -->
+    <details class="song-item">
+        <summary>
+            <span>El Anuncio <span style="font-weight:normal; font-size:0.9rem; color:#6b5d52;">(Carlos Martin)</span></span>
+        </summary>
+        <div class="lyrics">Anuncié que voy p'al Sur,
+me voy a Conce mañana,
+cargando esta sajuriana,
+pa' amigos de Santa Juana,
+Hualqui, San Pedro y Hualpén.
+
+De paso por Pitrufquén,
+Chanita abraza a su hermana,
+Amparo y la luz del sol,
+pronto nos dibujarán
+la ruta Lanco - Valdivia.
+
+<div class="coro">:/: Mañungo macera chicha,
+misterio del arenal,
+Memo devela mistelas,
+Paulo: chela y su amistad :/:</div>
+¡Cómo suenan las guitarras!
+junto a las del primo Hernán,
+a Miriam le voy contando
+del bote que nos prestaba
+su buen padre Don Julián.
+
+Ya llegamos a San Pablo,
+puro cariño y amor,
+nos vamos pa' Río Negro,
+Puerto Varas y Calbuco,
+cantamos a Puerto Montt.
+
+<div class="coro">(coro)
+Esto no sé si pasó,
+fue escrito en tiempo futuro,
+de seguro es eso y más,
+pongan sus versos acá
+que ya está la sajuriana.</div>
+De regreso ya al hogar,
+donde esperan más abrazos,
+de los demás caminantes
+de este viaje tan bonito:
+dicen que le llaman vida.</div>
+    </details>
+
+    <div class="song-item">Curuhei <span style="font-weight:normal; font-size:0.9rem; color:#6b5d52;">(Nicolás Guillén / Manuel Martin)</span></div>
+    
+    <div class="song-item">Los Alumbros <span style="font-weight:normal; font-size:0.9rem; color:#6b5d52;">(recop. Manuel Martin / adaptación de Eduardo Martin)</span></div>
+    
+    <div class="song-item">Alma Llanera <span style="font-weight:normal; font-size:0.9rem; color:#6b5d52;">(Pedro Gutiérrez)</span></div>
+    
+    <div class="song-item">Cantarito de Greda <span style="font-weight:normal; font-size:0.9rem; color:#6b5d52;">(Nicanor Molinare)</span></div>
+
+    <!-- LINK 3 -->
+    <details class="song-item">
+        <summary>
+            <span>Canción del estropajo <span style="font-weight:normal; font-size:0.9rem; color:#6b5d52;">(Carlos Martin)</span></span>
+        </summary>
+        <div class="lyrics">Que será del gancho "Mora",
+donde estará "la Murín",
+ellos tienen ya sus letras
+y en abril sus cuecas mil,
+yo vengo por otro encargo:
+la canción del estropajo.
+
+Por qué todo se desecha,
+si se puede reciclar,
+que no nos vendan chatarra
+ni basura para el mar,
+aprendamos del trabajo
+de un buen noble estropajo.
+
+Cómo está la "teteriola"
+pa' tomar "matiola", dice mi Pai,
+agarren el estropajo
+pa' no quemarse, dice mi Mai:
+¡ya voy, ya voy!
+
+Ya dirán que eso es pasado,
+que hoy ya no se puede usar,
+pero seguimos bebiendo...
+mata cola pa' gozá'
+y si se derrama un vaso
+salva tu amigo estropajo.
+
+Limpia, seca y se queda,
+se mantiene con jabón,
+sirve un año en la cocina
+y otros más en el fogón,
+puede faltar comistrajo
+pero nunca el estropajo.
+
+<div class="coro">(coro)
+Hilvanando en los recuerdos
+uno se pone a pensar,
+que en lo simple está lo bello
+y en el ahora hay que estar,
+nos va aliviando el camino
+nuestro harapiento amigo.</div>
+Y así ya vamos cerrando
+esta humilde reflexión,
+que viene de las entrañas
+de la propia tradición,
+y que cruzará al futuro
+vivita como ninguno.</div>
+    </details>
+
+    <div class="section-header">(Leonor "La Leo" Martin Gerdes, Bastián "Basti" Martin Gerdes, Carlos Martin)</div>
+
+    <div class="song-item">Cherubichá <span style="font-weight:normal; font-size:0.9rem; color:#6b5d52;">(Armando Nelli)</span></div>
+    
+    <div class="song-item">La Fogata <span style="font-weight:normal; font-size:0.9rem; color:#6b5d52;">(Carlos Martin)</span></div>
+
+    <!-- LINK 4 -->
+    <details class="song-item">
+        <summary>
+            <span>En la Valdiviana <span style="font-weight:normal; font-size:0.9rem; color:#6b5d52;">(Carlos Martin)</span></span>
+        </summary>
+        <div class="lyrics">Por la puerta de la noche, Víctor Hugo arriba ya,
+se une al tañer de guitarras y al canto de Manuel,
+recordando sabias letras, nos declama su verdad,
+que se escucha solo aquí en la Valdiviana.
+
+En las mesas, las historias, se respetan en su andar,
+los del barrio, pasajeros, del trabajo y del soñar,
+profesores, estudiantes: un ¡salud por el crear!
+y la lluvia riega afuera su bohemia.
+
+Ahí viene Anita, llena las mesas,
+con la comida herencia ancestral,
+se ve a Sabino, siempre saluda,
+regocijando con su bondad,
+echen afuera, malos pasares,
+renueven vida desde su voz,
+que se escuche solo aquí en la Valdiviana.
+
+De boleros, polcas, zambas, "Valparaíso" y "Puerto Montt",
+con tonadas, canto nuevo, de Valdivia y Concepción,
+valses, tangos, morenadas, ya vamos pa' Chiloé,
+que este viaje empieza aquí en la Valdiviana.
+
+Si el amigo forastero, desenfunda su canción,
+sigue Pancho con los cueros, Iván llega desde Angol,
+si su nombre no aparece, no cause preocupación,
+Ainilebu aquí nos llamaremos todos.</div>
+    </details>
+
+    <div class="song-item">La Cucharita <span style="font-weight:normal; font-size:0.9rem; color:#6b5d52;">(Jorge Velosa)</span></div>
+
+    <!-- LINK 5 -->
+    <details class="song-item">
+        <summary>
+            <span>Perfidia <span style="font-weight:normal; font-size:0.9rem; color:#6b5d52;">(Alberto Domínguez)</span></span>
+        </summary>
+        <div class="lyrics">Mujer
+Si puedes tú con Dios hablar
+Pregúntale si yo alguna vez
+Te he dejado de adorar
+
+Y al mar
+Espejo de mi corazón
+Las veces que me ha visto llorar
+La perfidia de tu amor
+
+Te he buscado dondequiera que yo voy
+Y no te puedo hallar
+¿Para qué quiero otros besos?
+Si tus labios no me quieren ya besar
+
+Y tú
+Quién sabe por donde andarás
+Quién sabe que aventuras tendrás
+Qué lejos estás de mí
+De mí
+
+Te he buscado dondequiera que yo voy
+Y no te puedo hallar
+¿Para qué quiero otros besos?
+Si tus labios no me quieren ya besar
+
+Y tú
+Quién sabe por donde andarás
+Quién sabe que aventuras tendrás
+Qué lejos estás de mí
+De mí
+De mí</div>
+    </details>
+
+    <!-- LINK 6 -->
+    <details class="song-item">
+        <summary>
+            <span>La jardinera <span style="font-weight:normal; font-size:0.9rem; color:#6b5d52;">(Violeta Parra)</span></span>
+        </summary>
+        <div class="lyrics">Para olvidarme de ti
+Voy a cultivar la tierra
+En ella espero encontrar
+Remedio para mi pena
+Aquí plantaré el rosal
+De las espinas más gruesas
+Tendré lista la corona
+Para cuando, en mí, te mueras
+
+<div class="coro">Para mi tristeza, violeta azul
+Clavelina roja pa mi pasión
+Y para saber si me corresponde
+Deshojo un blanco manzanillón
+Si me quiere mucho, poquito o nada
+Tranquilo queda mi corazón</div>
+Creciendo irán, poco a poco
+Los alegres pensamientos
+Cuando ya estén florecidos
+Irán lejos tus recuerdos
+De la flor de la amapola
+Seré su mejor amiga
+La pondré bajo la almohada
+Para dormirme tranquila
+
+<div class="coro">(Coro)</div>
+Cogollo de toronjil
+Cuando me aumenten las penas
+Las flores de mi jardín
+Han de ser mis enfermeras
+Y si acaso yo me ausento
+Antes que tú arrepientas
+Heredarás estas flores
+Ven a curarte con ellas
+
+<div class="coro">(Coro)</div></div>
+    </details>
+
+    <footer>
+        Programa sujeto a cambios según los intérpretes.<br>¡Que disfruten la presentación!
+    </footer>
+
+</body>
+</html>
